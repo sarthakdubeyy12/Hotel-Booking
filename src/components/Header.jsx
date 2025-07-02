@@ -1,8 +1,8 @@
 import { useRoomContext } from '../context/RoomContext';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LogoWhite } from '../assets'; // SVG Logo
-import { LogoDark } from '../assets'; // SVG Logo
+import logoWhite from '../assets/img/logo-white.svg';
+import logoDark from '../assets/img/logo-dark.svg';
 
 
 const Header = () => {
@@ -37,11 +37,11 @@ const Header = () => {
 
         {/* Logo */}
         <Link to="/" onClick={resetRoomFilterData}>
-          {
-            header
-              ? <LogoDark className='w-[160px]' /> //<img className='w-[160px]' src={LogoDark} />
-              : <LogoWhite className='w-[160px]' /> //<img className='w-[160px]' src={LogoWhite} />
-          }
+          <img
+            className="w-[160px]"
+            src={header ? logoDark : logoWhite}
+            alt="Hotel & Spa Adina Logo"
+          />
         </Link>
 
         {/* Nav */}
